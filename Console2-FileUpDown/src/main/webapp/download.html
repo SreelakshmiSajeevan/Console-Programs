@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+function hrefinput() {
+	var v=document.getElementById("fname").value;
+	document.getElementById("a").setAttribute("href", "download?f="+v);
+}
+</script>
+<body>
+
+<input type="text" id="fname" placeholder="file name like sample.jpg" onkeyup="hrefinput()">
+<a href="" id="a">Download</a>
+</body>
+</html>

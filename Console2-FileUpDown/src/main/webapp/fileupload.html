@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script src="jquery-3.3.1.min.js"></script>
+<script >
+function readURL(input) {
+if (input.files && input.files[0]) {
+var reader = new FileReader();
+reader.onload = function (e) {
+$('#blah').attr('src', e.target.result);
+}
+reader.readAsDataURL(input.files[0]);
+}
+}
+$("#fileToUpload").change(function(){
+readURL(this);
+});</script>
+<body>
+<form action="upload" method="post" enctype="multipart/form-data" >
+<div id="submitbutton">
+<div style="float:left">
+<img src="" id="blah" width="150px" height="120px"/>
+<br> <input type="file" name="filename" id="fileToUpload" onchange="readURL(this);">
+<button type="submit">Upload Photo</button>
+</div></div>
+
+
+</form>
+</body>
+</html>
